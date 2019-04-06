@@ -18,7 +18,7 @@ class Server {
       console.log(req.ip + ' : portal')
       res.end('<h1>Hello World</h1>')
     })
-
+    this.app.use(express.static(__dirname + '/public'))
     this.app.use(this.router)
   }
 
