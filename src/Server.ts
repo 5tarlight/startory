@@ -20,8 +20,6 @@ class Server {
     })
 
     this.app.use(this.router)
-    
-    this.start()
   }
 
   start() {
