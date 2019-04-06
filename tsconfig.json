@@ -2,9 +2,14 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es2017",
+    "moduleResolution": "node",
     "noImplicitAny": true,
     "outDir": "./dist",
-    "sourceMap": true
+    "sourceMap": true,
+    "baseUrl": ".",
+    "pretty": true,
+    "strict": true,
+    "types": ["node", "express"]
   },
   "include": [
     "./src/**/*"
