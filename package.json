@@ -4,5 +4,11 @@
   "main": "index.js",
   "repository": "git@github.com:5tarlight/startory.git",
   "author": "5tarlight <developerstarlight@gmail.com>",
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "dependencies": {
+    "koa": "^2.7.0",
+    "korean-logger": "^1.0.6",
+    "nodemon": "^1.18.10",
+    "typescript": "^3.4.2"
+  }
 }
