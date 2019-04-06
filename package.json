@@ -6,9 +6,13 @@
   "author": "5tarlight <developerstarlight@gmail.com>",
   "license": "GPL-3.0",
   "dependencies": {
+    "@types/koa": "^2.0.48",
+    "@types/koa-router": "^7.0.40",
     "koa": "^2.7.0",
+    "koa-router": "^7.4.0",
     "korean-logger": "^1.0.6",
     "nodemon": "^1.18.10",
+    "ts-node": "^8.0.3",
     "typescript": "^3.4.2"
   }
 }
