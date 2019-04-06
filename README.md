@@ -1,0 +1,2 @@
+# startory
+Blog for Developers
