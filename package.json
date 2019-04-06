@@ -1,7 +1,7 @@
 {
   "name": "startory",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/main.ts",
   "repository": "git@github.com:5tarlight/startory.git",
   "author": "5tarlight <developerstarlight@gmail.com>",
   "license": "GPL-3.0",
@@ -14,5 +14,9 @@
     "nodemon": "^1.18.10",
     "ts-node": "^8.0.3",
     "typescript": "^3.4.2"
+  },
+  "scripts": {
+    "start": "tsc && node dist\\main",
+    "watch": "nodemon --watch 'src/**/*' -e ts,tsx --exec ts-node ./src/main.ts"
   }
 }
