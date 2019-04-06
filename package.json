@@ -1,0 +1,8 @@
+{
+  "name": "startory",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:5tarlight/startory.git",
+  "author": "5tarlight <developerstarlight@gmail.com>",
+  "license": "GPL-3.0"
+}
