@@ -19,7 +19,7 @@ class Server {
     this.app.set('view engine', 'pug')
     this.app.set('views', path.join(__dirname, '/public/views'))
 
-    this.app.use(express.static(path.join(__dirname, '/public')))
+    this.app.use('/', express.static(path.join(__dirname, '/public')))
     Router.init(this.app, this.router)
   }
 

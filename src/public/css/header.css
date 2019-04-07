@@ -1,0 +1,26 @@
+.home span, .signin b, .signup b {
+  color: white;
+}
+
+.t2 {
+  float: right;
+  margin: 5px;
+  height: 100%;
+}
+
+.t1 {
+  float: left;
+  margin: 5px;
+  height: 100%;
+}
+
+.header {
+  width: 100%;
+  background-color: rgb(3, 3, 94);
+  text-decoration: none;
+  overflow: hidden;
+  height: 50px;
+  vertical-align: middle;
+  font-size: 20px;
+  padding: 5px;
+}

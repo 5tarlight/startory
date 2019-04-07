@@ -1,8 +1,21 @@
 html
   head
+    script(src='https://code.jquery.com/jquery-3.3.1.min.js')
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css")
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css")
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js")
+    link(rel='stylesheet' href='/css/header.css')
     block head
   body
+    header.header
+      .nav.t1
+        a.home(href='/' title='홈')
+          span.glyphicon.glyphicon-home(aria-hidden='true')
+      .nav.t2
+        a.signin(href='/signin' title='로그인')
+          b 로그인
+      .nav.t2
+        a.signup(href='/signup' title='회원가입')
+          b 회원가입
+
     block content
