@@ -1,6 +1,7 @@
 import * as express from 'express'
 import * as SLog from './SLog'
 import * as path from 'path'
+import Router from './routes/Router'
 
 class Server {
   app: express.Application
@@ -18,21 +19,8 @@ class Server {
     this.app.set('view engine', 'pug')
     this.app.set('views', path.join(__dirname, '/public/views'))
 
-    this.router.route('/').get((req: express.Request, res: express.Response) => {
-      SLog.info(req.ip + ' : portal')
-      req.app.render('portal', (err: Error, html: string) => {
-        if(err) {
-          if (err.stack)
-            SLog.err(err.stack)
-          else throw err
-        }
-
-        res.end(html)
-      })
-    })
-
     this.app.use(express.static(path.join(__dirname, '/public')))
-    this.app.use(this.router)
+    Router.init(this.app, this.router)
   }
 
   start() {
