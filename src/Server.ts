@@ -1,4 +1,5 @@
 import * as express from 'express'
+import * as SLog from './SLog'
 
 class Server {
   app: express.Application
@@ -15,7 +16,7 @@ class Server {
     this.app.set('port', 80)
 
     this.router.route('/').get((req: express.Request, res: express.Response) => {
-      console.log(req.ip + ' : portal')
+      SLog.info(req.ip + ' : portal')
       res.end('<h1>Hello World</h1>')
     })
     this.app.use(express.static(__dirname + '/public'))
@@ -24,7 +25,7 @@ class Server {
 
   start() {
     this.app.listen(this.app.get('port'), () => {
-      console.log(`Express server is online on port ${this.app.get('port')}`)
+      SLog.success(`Express server is online on port ${this.app.get('port')}`)
     })
   }
 }
