@@ -20,3 +20,9 @@ npm install
 ```
 source "YOUR SQL FILE URL HERE";
 ```
+
+## Author
+- Starlight <developerstarlight@gmail.com>
+
+## License
+- GNU Public License v3.0
