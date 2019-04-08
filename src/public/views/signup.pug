@@ -1,0 +1,10 @@
+extends layout
+
+block head
+  title STARTORY - Sign Up
+  
+block body
+  form(action="/process/signup", method="post")
+    input(type='text' placeholder='Username' name='username')
+    input(type='password' placeholder='Password' name='password')
+    input(type='submit' value='Submit')
