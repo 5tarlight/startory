@@ -3,8 +3,8 @@ extends layout
 block head
   title STARTORY - Sign Up
   
-block body
+block content
   form(action="/process/signup", method="post")
-    input(type='text' placeholder='Username' name='username')
-    input(type='password' placeholder='Password' name='password')
+    input(type='text' placeholder='Username' name='username' style='display: block')
+    input(type='password' placeholder='Password' name='password' style='display: block')
     input(type='submit' value='Submit')
