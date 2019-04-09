@@ -4,6 +4,7 @@ import * as path from 'path'
 import * as bodyParser from 'body-parser'
 import * as cookieParser from 'cookie-parser'
 import * as expressSession from 'express-session'
+import DB from './DB'
 import Router from './routes/Router'
 
 class Server {
@@ -32,6 +33,7 @@ class Server {
       saveUninitialized: true
     }))
 
+    DB.init()
     Router.init(this.app, this.router)
   }
 
