@@ -10,7 +10,7 @@ class DB {
     SLog.success('DB Connection Ready')
   }
 
-  static query(query: string, callback: mysql.QueryFunction) {
+  static query(query: string, callback: mysql.queryCallback) {
     this.conn.connect()
     this.conn.query(query, callback)
   }
