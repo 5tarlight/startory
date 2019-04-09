@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `topic` (
 CREATE TABLE IF NOT EXISTS `user` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(30) NOT NULL,
-  `email` varchar(100) NOT NULL,
+  `password` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
