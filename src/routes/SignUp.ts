@@ -31,7 +31,7 @@ class SignUp {
       return
     }
 
-    DB.query(`INSERT INTO user (username, password) VALUES (${username}, ${password})`, (err, results, fileds) => {
+    DB.query(`INSERT INTO user (username, password) VALUES ("${username}", "${password}")`, (err, results, fileds) => {
       if(err) {
         if(err.stack) {
           SLog.err(err.stack)
@@ -41,6 +41,7 @@ class SignUp {
       if(req.session) {
         req.session.username = username
         SLog.info(req.ip + ' : new user signed in ' + username)
+        res.redirect('/')
       }
       else throw Error('Session is not defined')
     })
