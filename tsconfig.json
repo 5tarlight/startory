@@ -9,7 +9,8 @@
     "baseUrl": ".",
     "pretty": true,
     "strict": true,
-    "types": ["node", "express"]
+    "types": ["node", "express"],
+    "resolveJsonModule": true
   },
   "include": [
     "./src/**/*"
