@@ -2,9 +2,11 @@ extends layout
 
 block head
   title STARTORY - Sign Up
-  
+  link(rel="stylesheet", href="/css/signup.css")
+
 block content
-  form(action="/process/signup", method="post")
-    input(type='text' placeholder='Username' name='username' style='display: block')
-    input(type='password' placeholder='Password' name='password' style='display: block')
-    input(type='submit' value='Submit')
+  .outbox
+    form(action='/process/auth' method='post')
+      input.usernameInput(style='display: block' placeholder='Username' name='username' type='text')
+      input.passwordInput(style='display: block' placeholder='Password' name='password' type='password')
+      input.submit(style='display: block' value='회원가입' name='' type='submit' class='submitBtn')
