@@ -28,7 +28,8 @@ class Server {
     this.app.use(cookieParser())
     this.app.use(expressSession({
       secret: '!@#%#^$%&^*&#$@!$^',
-      resave: true
+      resave: true,
+      saveUninitialized: true
     }))
 
     Router.init(this.app, this.router)
