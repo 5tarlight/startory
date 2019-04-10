@@ -1,12 +1,16 @@
 extends layout
 
 block head
-  script(src='/views/js/in_login.js')
+  script(src='/js/login.js')
   link(rel="stylesheet", href="/css/login.css")
   title 로그인
 
 block content
   .outbox
+    .alert.alert-danger.alert-dismissible#error(role='alrt')
+      button.close(type='button' data-dismiss='alert' aria-label='Close')
+        span(aria-hidden='true') &times;
+      strong#text-zone
     form(action='/process/login' method='post')
       input.usernameInput(style='display: block' placeholder='Username' name='username' type='text')
       input.passwordInput(style='display: block' placeholder='Password' name='password' type='password')
