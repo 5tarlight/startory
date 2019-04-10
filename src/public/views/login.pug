@@ -1,0 +1,13 @@
+extends layout
+
+block head
+  script(src='/views/js/in_login.js')
+  link(rel="stylesheet", href="/css/login.css")
+  title 로그인
+
+block content
+  .outbox
+    form(action='/process/login' method='post')
+      input.usernameInput(style='display: block' placeholder='Username' name='username' type='text')
+      input.passwordInput(style='display: block' placeholder='Password' name='password' type='password')
+      input.submit(style='display: block' value='로그인' name='' type='submit')
