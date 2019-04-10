@@ -3,9 +3,14 @@ extends layout
 block head
   title STARTORY - Sign Up
   link(rel="stylesheet", href="/css/signup.css")
+  script(src="/js/signup.js")
 
 block content
   .outbox
+    .alert.alert-danger.alert-dismissible#error(role='alrt')
+      button.close(type='button' data-dismiss='alert' aria-label='Close')
+        span(aria-hidden='true') &times;
+      strong#text-zone
     form(action='/process/signup' method='post')
       input.usernameInput(style='display: block' placeholder='Username' name='username' type='text')
       input.passwordInput(style='display: block' placeholder='Password' name='password' type='password')
