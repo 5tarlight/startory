@@ -20,6 +20,8 @@ npm install
 ```
 source "YOUR SQL FILE URL HERE";
 ```
+- Rename src/config/dbsetting.inc.json into dbsetting.json
+- Edit src/config/dbsetting.json
 
 ## Author
 - Starlight <developerstarlight@gmail.com>
