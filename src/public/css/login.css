@@ -1,0 +1,28 @@
+.outbox {
+  background-color: #ffd5d5;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 5px;
+  padding: 50px;
+  margin: 0px;
+  margin: 12% 34%;
+}
+
+body {
+  background-image: url('/img/def.png');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.usernameInput, .passwordInput, .submit {
+  width: 350px;
+  height: 35px;
+  border-radius: 5px;
+}
+
+.submit {
+  margin-top: 10px;
+  font-size: 18px;
+}
