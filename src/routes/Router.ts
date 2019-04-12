@@ -1,5 +1,5 @@
 import * as express from 'express'
-import { Portal, SignUp, Login } from './Routes'
+import { Portal, SignUp, Login, Session } from './Routes'
 import * as SLog from '../SLog'
 
 class Router {
@@ -9,6 +9,7 @@ class Router {
     router.route('/process/signup').post(SignUp.signup)
     router.route('/login').get(Login.join)
     router.route('/process/login').post(Login.login)
+    router.route('/api/session').get(Session.join)
 
     app.use(router)
     SLog.success('Router is Ready.')
