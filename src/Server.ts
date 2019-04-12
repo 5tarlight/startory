@@ -4,6 +4,7 @@ import * as path from 'path'
 import * as bodyParser from 'body-parser'
 import * as cookieParser from 'cookie-parser'
 import * as expressSession from 'express-session'
+import * as cors from 'cors'
 import DB from './DB'
 import Router from './routes/Router'
 
@@ -26,6 +27,7 @@ class Server {
     this.app.use('/', express.static(path.join(__dirname, '/public')))
     this.app.use(bodyParser.urlencoded({ extended: false }))
     this.app.use(bodyParser.json())
+    this.app.use(cors())
     this.app.use(cookieParser())
     this.app.use(expressSession({
       secret: '!@#%#^$%&^*&#$@!$^',
