@@ -7,17 +7,18 @@ html
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js")
     link(rel='stylesheet' href='/css/header.css')
     link(rel="shortcut icon", href="/img/favicon.ico", type="image/x-icon")
+    script(src='/js/global.js')
     block head
   body
     header.header
       .nav.t1
-        a.home(href='/' title='홈')
+        a.headeritem(href='/' title='홈')
           span.glyphicon.glyphicon-home(aria-hidden='true')
       .nav.t2
-        a.signin(href='/login' title='로그인')
+        a.headeritem(href='/login' title='로그인')
           b 로그인
-      .nav.t2
-        a.signup(href='/signup' title='회원가입')
+      .nav.t2.username-blank
+        a.headeritem(href='/signup' title='회원가입')
           b 회원가입
 
     block content
