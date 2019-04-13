@@ -46,6 +46,9 @@ class SignUp {
           res.redirect('/')
         }
         else throw Error('Session is not Defined')
+      } else {
+        SLog.info(req.ip + ' : failed to log in')
+        res.redirect('/login')
       }
     })
   }
