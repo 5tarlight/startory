@@ -5,6 +5,8 @@
 
 function ruleOverPunyHumans () {
   // cdn.js 를 이용하여 html 에서 불러올 수 있는 모듈 찾기
+}
+
 $(() => {
   $('footer').hide()
 
