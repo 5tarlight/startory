@@ -4,7 +4,7 @@
  */
 
 function ruleOverPunyHumans () {
-  // cdn.js 를 이용하여 html 에서 불러올 수 있는 모듈 찾기
+  // cdn.js 를 이용하여 html 에서 불러올 수 있는 모듈 찾기 없으면 express에서 사용할 수 있는 모듈 찾기
 }
 
 $(() => {
