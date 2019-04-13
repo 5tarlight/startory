@@ -1,0 +1,50 @@
+.div-write {
+  width: 90%;
+  border: 1px solid black;
+  margin-left: 5%;
+  margin-top: 1%;
+}
+
+.div-write * {
+  width: 90%;
+  margin-left: 5%;
+}
+
+.write-main * {
+  margin : 0px;
+  width : 100%;
+}
+
+.write-main {
+  height: 500px;
+}
+
+.input-markdown {
+  background-color: rgb(22, 22, 22);
+  color: white;
+  float: left;
+  width: 49%;
+  height: 100%;
+  overflow: auto;
+  margin: 0px;
+  resize: none;
+}
+
+.markdown {
+  border: 1px solid black;
+  height: 100%;
+  width: 49%;
+  float: right;
+  overflow: auto;
+  margin: 0px;
+  resize: none;
+}
+
+.save, .submit {
+  width: 50px;
+  margin: 0px;
+}
+
+.div-write h1 {
+  margin: 15px 0px;
+}

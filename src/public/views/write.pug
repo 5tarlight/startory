@@ -2,6 +2,18 @@ extends layout
 
 block head
   title STARTORY - Write
+  link(rel="stylesheet", href="/css/write.css")
 
 block content
-  h1 글쓰기
+  .div-write
+    h1 
+      b 글쓰기
+    input.input-title(type='text' placeholder='제목' style='display: block;')
+    input.input-desc(type='text' placeholder='설명' style='display: block;')
+    .write-main
+      textarea.input-markdown(type='text' placeholder='마크다운')
+      .markdown
+    input.tag(type='text' placeholder='태그(공백으로 구분 ex) Starlight Developer)')
+    .group-btn
+      button.save 저장
+      button.submit 제출
