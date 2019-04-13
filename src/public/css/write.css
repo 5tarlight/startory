@@ -28,6 +28,7 @@
   overflow: auto;
   margin: 0px;
   resize: none;
+  padding: 15px;
 }
 
 .markdown {
@@ -38,6 +39,7 @@
   overflow: auto;
   margin: 0px;
   resize: none;
+  padding: 15px;
 }
 
 .save, .submit {
