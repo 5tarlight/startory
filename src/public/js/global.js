@@ -1,6 +1,6 @@
 $(() => {
   $.ajax({
-    type: 'get',
+    type: 'post',
     url: '/api/session',
     data: {},
     dataType: 'json',

@@ -10,7 +10,7 @@ class Router {
     router.route('/login').get(Login.join)
     router.route('/process/login').post(Login.login)
     router.route('/api/session').get(Session.join)
-    router.route('/logout').get(Logout.join)
+    router.route('/logout').post(Logout.join)
 
     app.use(router)
     SLog.success('Router is Ready.')
