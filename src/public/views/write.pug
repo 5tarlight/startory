@@ -5,6 +5,7 @@ block head
   link(rel="stylesheet", href="/css/write.css")
   script(src="/js/write.js")
   script(src="/js/markdown.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/8.4.2/markdown-it.min.js")
 
 block content
   .div-write
@@ -13,7 +14,7 @@ block content
     input.input-title(type='text' placeholder='제목' style='display: block;')
     input.input-desc(type='text' placeholder='설명' style='display: block;')
     .write-main
-      textarea.input-markdown(type='text' placeholder='마크다운')
+      textarea.input-markdown(spellcheck='false' type='text' placeholder='마크다운')
       .markdown
     input.tag(type='text' placeholder='태그(공백으로 구분 ex) Starlight Developer)')
     .group-btn
