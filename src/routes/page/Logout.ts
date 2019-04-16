@@ -7,6 +7,8 @@ class Portal {
 
     if(req.session) {
       req.session.username = undefined
+    } else {
+      SLog.err('Session is not defined.')
     }
     res.redirect('/')
   }

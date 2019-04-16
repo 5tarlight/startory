@@ -43,7 +43,7 @@ class SignUp {
         SLog.info(req.ip + ' : new user signed in ' + username)
         res.redirect('/')
       }
-      else throw Error('Session is not defined')
+      else SLog.err('Session is not defined')
     })
   }
 }
