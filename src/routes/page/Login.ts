@@ -36,7 +36,7 @@ class SignUp {
         if(err.stack) {
           SLog.err(err.stack)
           return
-        } else throw err
+        } else SLog.err(err.toString())
       }
 
       if(results.length > 0) {
