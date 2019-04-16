@@ -11,9 +11,7 @@ class DB {
   }
 
   static query(query: string, callback: mysql.queryCallback) {
-    this.conn.connect()
     this.conn.query(query, callback)
-    this.conn.end()
   }
 }
 
