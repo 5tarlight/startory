@@ -2,11 +2,6 @@ import * as express from 'express'
 import * as SLog from '../../SLog'
 import DB from '../../DB'
 
-/**
- * @todo 로그인시 가끔 터지는 버그 해결
- * @body 버그가 아닐 시 원인이라도 판단
- */
-
 class SignUp {
   static join(req: express.Request, res: express.Response): void {
     SLog.info(req.ip + ' : login')
