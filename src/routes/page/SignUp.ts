@@ -17,8 +17,9 @@ class SignUp {
   }
 
   static signup(req: express.Request, res: express.Response): void {
-    const username = req.body.username || req.query.username
+    const username = req.body.username || req.query.usrename
     const password = req.body.password || req.query.password
+    const profile = req.body.profile || req.query.profile
     const exp: RegExp = /^\w\w{3,18}\w$/
 
     if(!username || !password) {
@@ -30,8 +31,9 @@ class SignUp {
       res.redirect('/signup')
       return
     }
-
-    DB.query(`INSERT INTO user (username, password) VALUES (?, ?)`, [username, password], (err, results, fileds) => {
+    const query = 'INSERT INTO `user` (`username`, `password`, `desc`) VALUES (?, ?, ?)'
+    const data = [username, password, profile ? profile : '']
+    DB.query(query, data, (err, results, fileds) => {
       if(err) {
         if(err.stack) {
           SLog.err(err.stack)
