@@ -10,8 +10,8 @@ class DB {
     SLog.success('DB Connection Ready')
   }
 
-  static query(query: string, callback: mysql.queryCallback) {
-    this.conn.query(query, callback)
+  static query(query: string, values: any, callback: mysql.queryCallback) {
+    this.conn.query(query, values, callback)
   }
 }
 
