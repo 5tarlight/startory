@@ -26,4 +26,4 @@ jspm_packages/
 dist
 dbsetting.json
 mogodb
-.idea
+.idea/
