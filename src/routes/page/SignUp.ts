@@ -31,7 +31,7 @@ class SignUp {
       return
     }
 
-    DB.query(`INSERT INTO user (username, password) VALUES ("${username}", "${password}")`, (err, results, fileds) => {
+    DB.query(`INSERT INTO user (username, password) VALUES (?, ?)`, [username, password], (err, results, fileds) => {
       if(err) {
         if(err.stack) {
           SLog.err(err.stack)

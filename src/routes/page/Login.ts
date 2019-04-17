@@ -31,7 +31,7 @@ class Login {
       return
     }
 
-    DB.query(`SELECT * FROM user WHERE username="${username}" AND password="${password}"`, (err, results, fileds) => {
+    DB.query(`SELECT * FROM user WHERE username=? AND password=?`, [username, password], (err, results, fileds) => {
       if(err) {
         if(err.stack) {
           SLog.err(err.stack)
