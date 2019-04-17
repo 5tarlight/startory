@@ -2,7 +2,7 @@ import * as express from 'express'
 import * as SLog from '../../SLog'
 import DB from '../../DB'
 
-class SignUp {
+class Login {
   static join(req: express.Request, res: express.Response): void {
     SLog.info(req.ip + ' : login')
     req.app.render('login', (err: Error, html: string) => {
@@ -54,4 +54,4 @@ class SignUp {
   }
 }
 
-export default SignUp
+export default Login
