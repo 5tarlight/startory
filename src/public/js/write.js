@@ -1,6 +1,22 @@
 $(() => {
   $('footer').hide()
 
+  const update = () => {
+    const md = window.markdownit({
+      highlight: function (str, lang) {
+        if (lang && hljs.getLanguage(lang)) {
+          try {
+            return hljs.highlight(lang, str).value;
+          } catch (__) {}
+        }
+    
+        return ''; // use external default escaping
+      }
+    })
+    const markdown = $('.input-markdown').val()
+    $('.markdown').html(md.render(markdown))
+  }
+
   $.ajax({
     type: 'post',
     url: '/api/session',
@@ -18,23 +34,16 @@ $(() => {
     }
   })
 
-  $('.save').on('click', event => {
+  $('.save').on('click', (event) => {
     event.preventDefault()
-
-    const md = window.markdownit({
-      highlight: function (str, lang) {
-        if (lang && hljs.getLanguage(lang)) {
-          try {
-            return hljs.highlight(lang, str).value;
-          } catch (__) {}
-        }
-    
-        return ''; // use external default escaping
-      }
-    })
-    const markdown = $('.input-markdown').val()
-    $('.markdown').html(md.render(markdown))
+    update()
   })
+
+  $('.input-markdown').change(update)
+
+  setInterval(() => {
+    update()
+  }, 100);
 
   /**
    * @todo 글쓰기 기능 구현
