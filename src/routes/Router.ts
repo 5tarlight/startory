@@ -1,5 +1,5 @@
 import * as express from 'express'
-import { Portal, SignUp, Login, Session, Logout, Write } from './Routes'
+import { Portal, SignUp, Login, Session, Logout, Write, DBPage } from './Routes'
 import * as SLog from '../SLog'
 
 class Router {
@@ -19,6 +19,7 @@ class Router {
     router.route('/process/login').post(Login.login)
     router.route('/logout').get(Logout.join)
     router.route('/write').get(Write.join)
+    router.route('/:username').get(DBPage.user)
   }
 
   static api(router: express.Router) {
