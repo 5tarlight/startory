@@ -4,7 +4,6 @@ import DB from '../../DB'
 
 class DBPage {
   static user(req: express.Request, res: express.Response): void {
-    res.writeHead(200, {'Content-Type': 'text/html;charset=utf8'})
     const qusername = req.params.username
 
     DB.query('SELECT * FROM `user` WHERE `username`=?', [qusername], (err, results, fileds) => {
@@ -17,8 +16,7 @@ class DBPage {
         const userdata = results[0]
 
         
-        res.send(`<h1>${userdata.username}</h1>`)
-        res.end(`<h3>Profile : ${userdata.desc}</h3>`)
+        res.send(`<h1>${userdata.username}</h1><h3>Profile : ${userdata.desc}</h3>`)
       } else {
         res.end('<h1>Error 404 - Page Not Found</h1>')
       }
