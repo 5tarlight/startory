@@ -15,7 +15,6 @@ class DBPage {
       if(results.length > 0) {
         const userdata = results[0]
 
-        
         res.send(`<h1>${userdata.username}</h1><h3>Profile : ${userdata.desc}</h3>`)
       } else {
         res.end('<h1>Error 404 - Page Not Found</h1>')
