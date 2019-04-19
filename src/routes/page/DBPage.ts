@@ -15,9 +15,20 @@ class DBPage {
 
       if(results.length > 0) {
         const userdata = results[0]
+        const context = {
+          username: userdata.username,
+          desc: userdata.desc
+        }
 
-        res.send(`<h1>${userdata.username}</h1><h3>Profile : ${userdata.desc}</h3>`)
-        SLog.info(req.ip + ' : ' + qusername)
+        req.app.render('user', context,(err: Error, html: string) => {
+          if(err) {
+            SLog.err(err.stack || err.toString())
+            return
+          }
+
+          res.end(html)
+          SLog.info(req.ip + ' : ' + qusername)
+        })
       } else {
         res.end('<h1>Error 404 - Page Not Found</h1>')
         SLog.info(req.ip + ' : 404')
