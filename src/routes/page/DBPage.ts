@@ -5,6 +5,7 @@ import DB from '../../DB'
 class DBPage {
   static user(req: express.Request, res: express.Response): void {
     const qusername = req.params.username
+    if(qusername == 'favicon.ico') return;
 
     DB.query('SELECT * FROM `user` WHERE `username`=?', [qusername], (err, results, fileds) => {
       if(err) {
