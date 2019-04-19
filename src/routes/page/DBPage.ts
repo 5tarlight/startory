@@ -30,8 +30,15 @@ class DBPage {
           SLog.info(req.ip + ' : ' + qusername)
         })
       } else {
-        res.end('<h1>Error 404 - Page Not Found</h1>')
-        SLog.info(req.ip + ' : 404')
+        req.app.render('404', {},(err: Error, html: string) => {
+          if(err) {
+            SLog.err(err.stack || err.toString())
+            return
+          }
+
+          res.end(html)
+          SLog.info(req.ip + ' : 404')
+        })
       }
     })
   }
