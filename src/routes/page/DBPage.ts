@@ -1,6 +1,7 @@
 import * as express from 'express'
 import * as SLog from '../../SLog'
 import DB from '../../DB'
+import * as hljs from 'highlight.js'
 
 class DBPage {
   static user(req: express.Request, res: express.Response): void {
@@ -63,10 +64,26 @@ class DBPage {
             return
           }
           if(results.length > 0) {
+            const md = require('markdown-it')({
+              highlight: function (str: string, lang: string) {
+                if (lang && hljs.getLanguage(lang)) {
+                  try {
+                    return '<pre class="hljs"><code>' +
+                           hljs.highlight(lang, str, true).value +
+                           '</code></pre>';
+                  } catch (__) {}
+                }
+            
+                return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
+              }
+            });
+            
+            const html = md.renderInline(results[0]['article'])
+
             res.end(`
             <h1>${results[0]['title']}</h1>
             <h3>Author: ${qusername}</h3>
-            <div>${results[0]['article']}
+            <div>${html}</div>
             `)
     
             SLog.info(req.ip + ' : ' + qusername + '/' + qtopic)
