@@ -62,7 +62,6 @@ class DBPage {
             SLog.err(err.stack || err.toString())
             return
           }
-          console.dir(results)
           if(results.length > 0) {
             res.end(`
             <h1>${results[0]['title']}</h1>
