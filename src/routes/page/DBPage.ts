@@ -77,16 +77,23 @@ class DBPage {
                 return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
               }
             });
-            
-            const html = md.renderInline(results[0]['article'])
 
-            res.end(`
-            <h1>${results[0]['title']}</h1>
-            <h3>Author: ${qusername}</h3>
-            <div>${html}</div>
-            `)
+            const context = {
+              title: results[0]['title'],
+              article: md.render(results[0]['article']),
+              author: results[0]['author']
+            }
+
+            req.app.render('topic', context, (err: Error, html: string) => {
+              if(err) {
+                SLog.err(err.stack || err.toString())
+                return
+              }
     
-            SLog.info(req.ip + ' : ' + qusername + '/' + qtopic)
+              res.end(html)
+              SLog.info(req.ip + ' : ' + qusername + '/' + qtopic)
+            })
+    
           } else {
             req.app.render('404', {}, (err: Error, html: string) => {
               if(err) {

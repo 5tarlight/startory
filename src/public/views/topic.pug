@@ -1,0 +1,14 @@
+extends layout
+
+block head
+  link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css")
+  title STARTORY - #{title}
+  script.
+    $(() => {
+      $('#article').html($(`#{article}`.replace('&lt;', '<').replace('gt;', '>')))
+    })
+
+block content
+  h1 #{title}
+  div#article
+  h3 Author: #{author}
