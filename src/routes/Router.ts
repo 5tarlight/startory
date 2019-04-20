@@ -20,6 +20,7 @@ class Router {
     router.route('/logout').get(Logout.join)
     router.route('/write').get(Write.join)
     router.route('/:username').get(DBPage.user)
+    router.route('/:username/:topic').get(DBPage.topic)
   }
 
   static api(router: express.Router) {

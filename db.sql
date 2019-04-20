@@ -19,6 +19,7 @@ USE `startory`;
 -- 테이블 startory.topic 구조 내보내기
 CREATE TABLE IF NOT EXISTS `topic` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) NOT NULL DEFAULT 'No TItle',
   `article` longtext NOT NULL DEFAULT '글이 없습니다',
   `author` bigint(20) NOT NULL,
   PRIMARY KEY (`id`),
@@ -34,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `desc` varchar(200) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- 내보낼 데이터가 선택되어 있지 않습니다.
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
