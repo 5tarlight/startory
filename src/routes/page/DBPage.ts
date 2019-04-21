@@ -80,7 +80,7 @@ class DBPage {
 
             const context = {
               title: results[0]['title'],
-              article: md.render(results[0]['article']),
+              article: results[0]['article'].replace('`', '"'),
               author: results[0]['author']
             }
 
