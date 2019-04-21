@@ -18,7 +18,7 @@ class DBPage {
         const userdata = results[0]
         const context = {
           username: userdata.username,
-          desc: userdata.desc
+          desc: userdata.desc,
         }
 
         req.app.render('user', context,(err: Error, html: string) => {
@@ -80,8 +80,10 @@ class DBPage {
 
             const context = {
               title: results[0]['title'],
-              article: results[0]['article'].replace('`', '"'),
-              author: results[0]['author']
+              article: results[0]['article'],
+              author: results[0]['author'],
+              id: id,
+              topic: qtopic
             }
 
             req.app.render('topic', context, (err: Error, html: string) => {

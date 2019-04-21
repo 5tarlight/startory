@@ -8,10 +8,10 @@ block head
   title STARTORY - #{title}
   script.
     $(() => {
-      setArticle(`#{article}`)
+      init(#{id}, #{topic})
     })
 
 block content
-  h1 #{title}
+  h1#title #{title}
   div#article
-  h3 Author: #{author}
+  h3#author Author: #{author}
