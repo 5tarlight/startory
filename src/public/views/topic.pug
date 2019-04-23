@@ -12,6 +12,8 @@ block head
     })
 
 block content
-  h1#title #{title}
-  div#article
-  h3#author Author: #{author}
+  h1#title(style='margin-left: 10px;') #{title}
+  hr(style='margin: 0px 20px;')
+  div#article(style='margin: 25px;') Loading...
+  hr(style='margin: 0px 20px;')
+  h3#author(style='margin-left: 10px;') Author: #{author}
