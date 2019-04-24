@@ -36,7 +36,7 @@
     "typescript": "^3.4.2"
   },
   "scripts": {
-    "start": "ts-node ./src/main.ts",
+    "start": "cross-env NODE_PATH=src ts-node ./src/main.ts",
     "watch": "nodemon --watch 'src/**/*' -e ts,tsx --exec ts-node ./src/main.ts"
   }
 }
