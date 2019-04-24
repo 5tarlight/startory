@@ -37,7 +37,7 @@ class Write {
         return
       }
 
-      const author = results[0]['username']
+      const author = results[0]['id']
     
       if(!title || !markdown) {
         res.redirect('/write')
