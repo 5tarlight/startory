@@ -69,9 +69,9 @@ $(() => {
 
     const data = {}
     data.title = title
-    if(desc) data.desc = desc
+    data.desc = desc || undefined
     data.markdown = markdown
-    if(tag.length > 0) data.tag
+    data.tag = tag || undefined
 
     $.ajax({
       url: '/process/write',

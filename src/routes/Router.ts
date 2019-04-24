@@ -21,6 +21,7 @@ class Router {
     router.route('/write').get(Write.join)
     router.route('/:username').get(DBPage.user)
     router.route('/:username/:topic').get(DBPage.topic)
+    router.route('/process/write').post(Write.write)
   }
 
   static api(router: express.Router) {
