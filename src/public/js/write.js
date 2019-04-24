@@ -66,5 +66,18 @@ $(() => {
       alert('내용이 필요합니다.')
       return
     }
+
+    const data = {}
+    data.title = title
+    if(desc) data.desc = desc
+    data.markdown = markdown
+    if(tag.length > 0) data.tag
+
+    $.ajax({
+      url: '/process/write',
+      type: 'POST',
+      data: data,
+      success: json => {}
+    })
   })
 })
