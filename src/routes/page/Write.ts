@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 import * as SLog from '../../SLog'
-import DB from 'src/DB';
+import DB from '../..//DB';
 
 class Write {
   static join(req: Request, res: Response): void {
