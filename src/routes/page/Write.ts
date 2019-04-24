@@ -31,7 +31,7 @@ class Write {
       return
     }
 
-    DB.query('SELECT * FROM user WHERE username=?', [req.session.username], (err, results, fields) => {
+    DB.query('SELECT * FROM `user` WHERE username=?', [req.session.username], (err, results, fields) => {
       if(err) {
         SLog.err(err.stack || err.toString())
         return
@@ -44,7 +44,7 @@ class Write {
         return
       }
     
-      DB.query('INSERT INTO (title, article, author) VALUES (?, ?, ?)', [title, markdown, author], (err, results, fields) => {
+      DB.query('INSERT INTO topic (`title`, `article`, `author`) VALUES (?, ?, ?)', [title, markdown, author], (err, results, fields) => {
         if(err) {
           SLog.err(err.stack || err.toString())
           return
