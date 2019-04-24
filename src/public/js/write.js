@@ -79,5 +79,8 @@ $(() => {
       data: data,
       success: json => {}
     })
+
+    alert('글쓰기가 완료되었습니다.')
+    window.location.href = '/'
   })
 })
