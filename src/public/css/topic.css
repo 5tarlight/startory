@@ -1,0 +1,11 @@
+.tagitem {
+  margin: 100% 3px;
+  padding: 5px;
+  background-color: rgb(196, 238, 255);
+  color: rgb(0, 79, 182);
+  border-radius: 10%;
+}
+
+.tagitem:hover {
+  cursor: pointer
+}
