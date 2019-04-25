@@ -30,8 +30,12 @@ class Portal {
 
         const context = {
           title: results[0]['title'],
+          desc: results[0]['desc'],
           article: results[0]['article'],
-          author: results[0]['author']
+          tag: results[0]['tag'],
+          author: results[0]['author'],
+          id: id,
+          topic: qtopic
         }
 
         res.json(context)

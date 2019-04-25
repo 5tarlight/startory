@@ -10,17 +10,24 @@ function init(_id, _topic) {
     success: (result) => {
       $('#title').text(result.title)
       $('#article').html(window.markdownit({
-      highlight: function (str, lang) {
-        if (lang && hljs.getLanguage(lang)) {
-          try {
-            return hljs.highlight(lang, str).value;
-          } catch (__) {}
+        highlight: function (str, lang) {
+          if (lang && hljs.getLanguage(lang)) {
+            try {
+              return hljs.highlight(lang, str).value;
+            } catch (__) {}
+          }
+      
+          return ''; // use external default escaping
         }
-    
-        return ''; // use external default escaping
-      }
-    }).render(result.article))
+      }).render(result.article))
       $('#author').text(`Author : ${result.author}`)
+
+      const tags = result.tag.split(' ')
+      $('#tag').html('')
+
+      for(let i in tags) {
+        $('#tag').append(`<span class="tagitem">${tags[i]}</span>`)
+      }
     }
   })
 }
