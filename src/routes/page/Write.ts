@@ -18,13 +18,9 @@ class Write {
 
   static write(req: Request, res: Response): void {
     const title = req.body.title || req.query.title
-    const desc = req.body.desc || req.query.desc
+    const desc = req.body.desc || req.query.desc || 'No Description'
     const markdown = req.body.markdown || req.query.markdown
-    const tag = req.body.tag || req.query.tag
-    /**
-    * @todo tag, desc 값도 사용하기
-    * @body SQL 수정, DBPage.ts 수정 필요
-    */
+    const tag = req.body.tag || req.query.tag || ''
     
     if(!req.session) {
       res.redirect('/login')
@@ -40,11 +36,10 @@ class Write {
       const author = results[0]['id']
     
       if(!title || !markdown) {
-        res.redirect('/write')
         return
       }
     
-      DB.query('INSERT INTO topic (`title`, `article`, `author`) VALUES (?, ?, ?)', [title, markdown, author], (err, results, fields) => {
+      DB.query('INSERT INTO topic (`title`, `desc`, `article`, `tag`, `author`) VALUES (?, ?, ?, ?, ?)', [title, desc, markdown, tag, author], (err, results, fields) => {
         if(err) {
           SLog.err(err.stack || err.toString())
           return

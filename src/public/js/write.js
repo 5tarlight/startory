@@ -56,7 +56,7 @@ $(() => {
       title: $('.input-title').val(),
       desc: $('.input-desc').val(),
       markdown: $('.input-markdown').val(),
-      tag: $('.tag').val().split(' ')
+      tag: $('.tag').val()
     }
 
     if(!title) {
